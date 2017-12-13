@@ -3,6 +3,8 @@
 #include <libfreenect/libfreenect.hpp>
 
 
+
+
 using namespace std;
 
 int main()
