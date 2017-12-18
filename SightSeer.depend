@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1512709029 source:/home/pi/SightSeer/main.cpp
+1513565386 source:/home/pi/SightSeer/main.cpp
 	<iostream>
 	<opencv2/opencv.hpp>
 	<libfreenect/libfreenect.hpp>
+	"Freenect_Controller.h"
 
 1501804703 /home/pi/opencv-3.3.0/include/opencv2/opencv.hpp
 	"opencv2/opencv_modules.hpp"
@@ -33,4 +34,13 @@
 	"opencv2/cudaoptflow.hpp"
 	"opencv2/cudastereo.hpp"
 	"opencv2/cudawarping.hpp"
+
+1513551418 /home/pi/SightSeer/Freenect_Controller.h
+	<pthread.h>
+	<opencv2/opencv.hpp>
+	<libfreenect/libfreenect.hpp>
+	"Frame_Mutex.h"
+
+1513551666 /home/pi/SightSeer/Frame_Mutex.h
+	<pthread.h>
 

@@ -1,0 +1,41 @@
+#include <pthread.h>
+#include <opencv2/opencv.hpp>
+#include <libfreenect/libfreenect.hpp>
+
+class Freenect_Controller
+{
+public:
+    Freenect_Controller(pFreenect_context *_pContext, int _iIndex)
+                        // Parent class constructor, <init list>
+                        :Freenect::FreenectDevice(_pContext, _iIndex),
+                        m_uiBuffer_depth(FREENECT_DEPTH_11BIT), m_uiBuffer_rgb(FREENECT_VIDEO_RGB), m_uiGamma(2048),
+                        m_depthMat(Size(640,480),CV_16UC1), m_rgbMat(Size(640,480), CV_8UC3, Scalar(0)),
+                        m_ownMat(Size(640,480),CV_8UC3,Scalar(0)),
+                        
+
+
+    {
+
+    }
+
+
+private:
+    std::vector<uint8_t> m_uiBuffer_depth;
+    std::vector<uint8_t> m_uiBuffer_rgb;
+    std::vector<uint16_t> m_uiGamma;
+
+    // OpenCV image types
+    cv::Mat m_depthMat;
+    cv::Mat m_rgbMat;
+    cv::Mat m_ownMat;
+
+    // Thread locking/unlocking objects
+    Frame_Mutex m_rgb_mutex;
+    Frame_Mutex m_depth_mutex;
+
+    // Image acq. flags
+    bool m_bNewRgbFrame;
+    bool m_bNewDepthFrame;
+
+
+};

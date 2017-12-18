@@ -182,7 +182,10 @@
 			<Add library="../src/libfreenect-0.5.7/build/lib/libfreenect_sync.a" />
 			<Add library="../src/libfreenect-0.5.7/build/lib/libfreenect.so" />
 			<Add library="../src/libfreenect-0.5.7/build/lib/libfreenect.a" />
+			<Add library="/lib/arm-linux-gnueabihf/libpthread-2.24.so" />
 		</Linker>
+		<Unit filename="Frame_Mutex.h" />
+		<Unit filename="Freenect_Controller.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
